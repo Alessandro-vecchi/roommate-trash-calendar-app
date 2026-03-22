@@ -27,17 +27,21 @@ export function CalendarDay({ day, assignment, onClick }: CalendarDayProps) {
     today.getMonth() === new Date().getMonth() &&
     today.getFullYear() === new Date().getFullYear();
 
+  // Get first letter on mobile, full name on desktop
+  const displayName = assignment?.roommate;
+  const initial = displayName?.charAt(0);
+
   return (
     <button
       onClick={onClick}
       className={cn(
-        "aspect-square p-2 rounded-lg border border-border bg-card hover:bg-accent transition-colors flex flex-col items-center justify-start gap-1 cursor-pointer",
-        isToday && "ring-2 ring-primary"
+        "aspect-square p-1 sm:p-2 rounded-md sm:rounded-lg border border-border bg-card hover:bg-accent active:bg-accent transition-colors flex flex-col items-center justify-start gap-0.5 sm:gap-1 cursor-pointer touch-manipulation",
+        isToday && "ring-2 ring-primary ring-inset"
       )}
     >
       <span
         className={cn(
-          "text-sm font-medium",
+          "text-xs sm:text-sm font-medium leading-none",
           isToday ? "text-primary" : "text-foreground"
         )}
       >
@@ -46,11 +50,12 @@ export function CalendarDay({ day, assignment, onClick }: CalendarDayProps) {
       {assignment && (
         <span
           className={cn(
-            "text-xs px-2 py-0.5 rounded-full truncate max-w-full",
+            "text-[10px] sm:text-xs px-1 sm:px-2 py-0.5 rounded-full truncate max-w-full font-medium",
             roommateColors[assignment.roommate] || "bg-muted text-muted-foreground"
           )}
         >
-          {assignment.roommate}
+          <span className="sm:hidden">{initial}</span>
+          <span className="hidden sm:inline">{displayName}</span>
         </span>
       )}
     </button>

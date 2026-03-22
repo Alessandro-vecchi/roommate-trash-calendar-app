@@ -71,34 +71,46 @@ export function Calendar({ assignments, onAssign, onRemove }: CalendarProps) {
     days.push(i);
   }
 
-  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const weekdays = ["S", "M", "T", "W", "T", "F", "S"];
+  const weekdaysFull = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <div className="flex items-center justify-between mb-6">
-        <Button variant="outline" size="icon" onClick={goToPreviousMonth}>
-          <ChevronLeft className="h-4 w-4" />
+      <div className="flex items-center justify-between mb-4 sm:mb-6 px-1">
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={goToPreviousMonth}
+          className="h-10 w-10 sm:h-9 sm:w-9"
+        >
+          <ChevronLeft className="h-5 w-5 sm:h-4 sm:w-4" />
         </Button>
-        <h2 className="text-2xl font-semibold text-foreground">
+        <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-foreground">
           {monthName} {year}
         </h2>
-        <Button variant="outline" size="icon" onClick={goToNextMonth}>
-          <ChevronRight className="h-4 w-4" />
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={goToNextMonth}
+          className="h-10 w-10 sm:h-9 sm:w-9"
+        >
+          <ChevronRight className="h-5 w-5 sm:h-4 sm:w-4" />
         </Button>
       </div>
 
-      <div className="grid grid-cols-7 gap-1 mb-2">
-        {weekdays.map((day) => (
+      <div className="grid grid-cols-7 gap-0.5 sm:gap-1 mb-1 sm:mb-2">
+        {weekdays.map((day, index) => (
           <div
-            key={day}
-            className="text-center text-sm font-medium text-muted-foreground py-2"
+            key={index}
+            className="text-center text-xs sm:text-sm font-medium text-muted-foreground py-1 sm:py-2"
           >
-            {day}
+            <span className="sm:hidden">{day}</span>
+            <span className="hidden sm:inline">{weekdaysFull[index]}</span>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-1">
+      <div className="grid grid-cols-7 gap-0.5 sm:gap-1">
         {days.map((day, index) => (
           <CalendarDay
             key={index}

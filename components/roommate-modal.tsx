@@ -46,20 +46,20 @@ export function RoommateModal({
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md">
-        <DialogHeader>
-          <DialogTitle>Assign Roommate</DialogTitle>
-          <DialogDescription>
+      <DialogContent className="w-[calc(100%-2rem)] max-w-md rounded-xl sm:rounded-lg">
+        <DialogHeader className="pb-2">
+          <DialogTitle className="text-lg">Assign Trash Duty</DialogTitle>
+          <DialogDescription className="text-sm">
             {selectedDate && formatDate(selectedDate)}
           </DialogDescription>
         </DialogHeader>
-        <div className="grid grid-cols-2 gap-3 py-4">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 py-2 sm:py-4">
           {ROOMMATES.map((roommate) => (
             <Button
               key={roommate}
               onClick={() => onSelectRoommate(roommate)}
               className={cn(
-                "h-14 text-base font-medium",
+                "h-12 sm:h-14 text-base font-medium touch-manipulation",
                 roommateButtonColors[roommate],
                 currentAssignment === roommate && "ring-2 ring-offset-2 ring-foreground"
               )}
@@ -72,7 +72,7 @@ export function RoommateModal({
           <Button
             variant="outline"
             onClick={onRemove}
-            className="w-full text-destructive hover:text-destructive"
+            className="w-full h-11 text-destructive hover:text-destructive touch-manipulation"
           >
             Remove Assignment
           </Button>

@@ -22,9 +22,9 @@ interface RoommateModalProps {
 
 const roommateButtonColors: Record<string, string> = {
   Alex: "bg-blue-500 hover:bg-blue-600 text-white",
-  Jordan: "bg-emerald-500 hover:bg-emerald-600 text-white",
-  Sam: "bg-amber-500 hover:bg-amber-600 text-white",
-  Taylor: "bg-rose-500 hover:bg-rose-600 text-white",
+  Fang: "bg-emerald-500 hover:bg-emerald-600 text-white",
+  Richie: "bg-amber-500 hover:bg-amber-600 text-white",
+  Xavier: "bg-rose-500 hover:bg-rose-600 text-white",
 };
 
 export function RoommateModal({

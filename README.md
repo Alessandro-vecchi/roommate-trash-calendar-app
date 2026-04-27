@@ -1,7 +1,7 @@
 
 # 🗑️ Roommate Trash Calendar App
 
-A simple, fast, and completely public web application designed to help roommates manage their household trash schedules without the hassle of logging in. Built on top of Next.js and Supabase.
+A simple, fast, and completely public web application designed to help roommates manage their household trash schedules without the hassle of logging in. Built on top of Next.js and Supabase. See it at this [link](roommate-trash-app.vercel.app). Should be modified ONLY by (my) roomates. But feel free to fork the repo if you want to create your own household manager. 
 
 ## Features
 

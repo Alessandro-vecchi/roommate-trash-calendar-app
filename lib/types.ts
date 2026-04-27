@@ -5,5 +5,5 @@ export interface CalendarAssignment {
   created_at: string;
 }
 
-export const ROOMMATES = ["Alex", "Fang", "Richie", "Xavier"] as const;
+export const ROOMMATES = ["Alex", "Fang", "Richie", "Jil"] as const;
 export type Roommate = (typeof ROOMMATES)[number];

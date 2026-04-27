@@ -13,7 +13,7 @@ const roommateColors: Record<string, string> = {
   Alex: "bg-blue-500 text-white",
   Fang: "bg-emerald-500 text-white",
   Richie: "bg-amber-500 text-white",
-  Xavier: "bg-rose-500 text-white",
+  Jil: "bg-rose-500 text-white",
 };
 
 export function CalendarDay({ day, assignment, onClick }: CalendarDayProps) {

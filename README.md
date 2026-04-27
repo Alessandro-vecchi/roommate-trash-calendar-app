@@ -29,7 +29,7 @@ Follow these instructions to set up the project on your local machine for develo
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/Alessandro-vecchi/roommate-trash-calendar-app.git](https://github.com/Alessandro-vecchi/roommate-trash-calendar-app.git)
+git clone https://github.com/Alessandro-vecchi/roommate-trash-calendar-app.git
 cd roommate-trash-calendar-app
 ```
 
@@ -47,7 +47,7 @@ pnpm install
 To connect the app to your database, create a `.env.local` file in the root of your project and add your Supabase credentials:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=[https://your-project-id.supabase.co](https://your-project-id.supabase.co)
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
 ```
 

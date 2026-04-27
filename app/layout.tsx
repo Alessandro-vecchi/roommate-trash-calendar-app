@@ -8,8 +8,13 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Roommate Trash Calendar', // Change this to your app's name
+  short_name: "Trash Schedule",
   description: 'Manage trash schedules with roommates', // Update the description
   generator: 'Next.js',
+  start_url: "/",
+  display: "standalone",
+  background_color: "#fffbe2",
+  theme_color: "#000000",
   icons: {
     icon: [
       {

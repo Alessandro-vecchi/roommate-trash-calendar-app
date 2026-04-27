@@ -26,7 +26,7 @@ export function Calendar({ assignments, onAssign, onRemove }: CalendarProps) {
   const startingDayOfWeek = firstDayOfMonth.getDay();
   const daysInMonth = lastDayOfMonth.getDate();
 
-  const monthName = currentDate.toLocaleString("default", { month: "long" });
+  const monthName = currentDate.toLocaleString("en-US", { month: "long" });
 
   const goToPreviousMonth = () => {
     setCurrentDate(new Date(year, month - 1, 1));

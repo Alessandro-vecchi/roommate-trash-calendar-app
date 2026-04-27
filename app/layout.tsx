@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
@@ -6,15 +6,16 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+// 1. Theme color is now handled by the Viewport export in Next.js 14+
+export const viewport: Viewport = {
+  themeColor: "#18181b", // Updated modern theme color
+}
+
+// 2. Remove short_name, start_url, display, and background_color from here
 export const metadata: Metadata = {
-  title: 'Roommate Trash Calendar', // Change this to your app's name
-  short_name: "Trash Schedule",
-  description: 'Manage trash schedules with roommates', // Update the description
+  title: 'Roommate Trash Calendar', 
+  description: 'Manage trash schedules with roommates', 
   generator: 'Next.js',
-  start_url: "/",
-  display: "standalone",
-  background_color: "#fffbe2",
-  theme_color: "#000000",
   icons: {
     icon: [
       {
